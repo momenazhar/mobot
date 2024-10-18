@@ -18,7 +18,7 @@ const mathCommand = new SlashCommandBuilder()
     .toJSON();
 
 client.once("ready", async () => {
-    console.log(`Logged in as ${client.user.tag}!`);
+    console.log(`Logged in as ${client.user?.tag}!`);
 
     try {
         await rest.put(Routes.applicationCommands(clientId), { body: [mathCommand] });
